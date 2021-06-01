@@ -36,9 +36,24 @@ program demo {
 			game.removeVisual(maiz)	
 	} )
 	
-	var auto1 = new Autos(image="auto-azul.png", position=new Position(x=4, y=5))
+	var auto1 = new Autos(image="auto-azul.png", position=new Position(x=1, y=5))
 	game.addVisual(auto1)
-		
+	
+	var auto2 = new Autos(image="auto-azul.png", position=new Position(x=2, y=5))
+	game.addVisual(auto2)
+	
+	keyboard.b().onPressDo( {
+		game.removeVisual(auto2)
+	} )
+	
+	keyboard.space().onPressDo( {
+		auto1.position(auto1.position().up(1))
+//		Es lo mismo que lo de abajo		
+//		var newPosition = new Position(x=auto1.position().x(), y=auto1.position().y())
+//		newPosition.up(1)
+//		auto1.position(newPosition.up(1))
+	})	
+	
 	game.start()
 
 }
