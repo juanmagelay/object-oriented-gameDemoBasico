@@ -47,11 +47,22 @@ program demo {
 	} )
 	
 	keyboard.space().onPressDo( {
-		auto1.position(auto1.position().up(1))
-//		Es lo mismo que lo de abajo		
-//		var newPosition = new Position(x=auto1.position().x(), y=auto1.position().y())
-//		newPosition.up(1)
-//		auto1.position(newPosition.up(1))
+	//	PacMan vertical effect
+		if (auto1.position().y() < game.height() - 1) { //Because table starts at 0.
+			auto1.position(auto1.position().up(1))	
+		} else {
+			auto1.position(new Position(x=auto1.position().x(), y=0))
+		}
+
+	})	
+	
+	keyboard.backspace().onPressDo( {
+	//	PacMan horizontal effect 
+		if (auto1.position().x() > 0) { //Because table starts at 0.
+			auto1.position(auto1.position().left(1))	
+		} else {
+			auto1.position(new Position(y=auto1.position().y(), x=game.width() - 1))
+		}
 	})	
 	
 	game.start()
