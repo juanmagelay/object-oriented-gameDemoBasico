@@ -39,7 +39,7 @@ program demo {
 	var auto1 = new Autos(image="auto-azul.png", position=new Position(x=1, y=5))
 	game.addVisual(auto1)
 	
-	var auto2 = new Autos(image="auto-azul.png", position=new Position(x=2, y=5))
+	var auto2 = new Autos(image="auto-azul.png", position=new Position(x=0.randomUpTo(game.width() - 1).truncate(0), y=0.randomUpTo(game.height() - 1).truncate(0)))
 	game.addVisual(auto2)
 	
 	keyboard.b().onPressDo( {
