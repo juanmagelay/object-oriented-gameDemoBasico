@@ -1,6 +1,7 @@
 
 import wollok.game.*
 import gameDemo.*
+import autos.*
 
 program demo {
 
@@ -34,6 +35,9 @@ program demo {
 			player.sacarMaiz(maiz)
 			game.removeVisual(maiz)	
 	} )
+	
+	var auto1 = new Autos(image="auto-azul.png", position=new Position(x=4, y=5))
+	game.addVisual(auto1)
 		
 	game.start()
 
