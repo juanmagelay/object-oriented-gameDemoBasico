@@ -11,10 +11,10 @@ program demo {
 	
 	player.position(game.center())
 	
-	keyboard.up().onPressDo ({player.moveteArriba()})	
-	keyboard.down().onPressDo ({player.moveteAbajo()})	
-	keyboard.left().onPressDo ({player.moveteIzquierda()})	
-	keyboard.right().onPressDo ({player.moveteDerecha()})
+	keyboard.up().onPressDo({player.moveteArriba()})	
+	keyboard.down().onPressDo({player.moveteAbajo()})	
+	keyboard.left().onPressDo({player.moveteIzquierda()})	
+	keyboard.right().onPressDo({player.moveteDerecha()})
 	keyboard.m().onPressDo({ 
 		game.say(player, "Maiz Plantado: " +  player.cantidadDeMaiz())
 	}
